@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lessons</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="Medical red.png">
+    <style>
+        @media (max-width: 768px) {
+    .about .about-content {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .about .about-content {
+        grid-template-columns: 1fr;
+    }
+
+    .swiper.team-slider {
+        height: 300px;
+    }
+}
+/* Navbar Styles */
+.header {
+    background-color: #333;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.header .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+}
+
+.navbar {
+    display: flex;
+    gap: 20px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.navbar a:hover {
+    color: #1abc9c;
+}
+
+.header .btn {
+    background-color: #1abc9c;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.header .btn:hover {
+    background-color: #16a085;
+}
+        /* Navbar Styles */
+        header {
+            background-color: #343a40;
+        }
+        .navbar-brand {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #fff !important;
+        }
+        .navbar-nav .nav-link {
+            font-size: 1.1rem;
+            color: #fff !important;
+            margin-right: 15px;
+        }
+        .navbar-nav .nav-link:hover {
+            color: #f39c12 !important;
+        }
+
+        /* Footer Styles */
+        .footer {
+    background-color: #333;
+    color: white;
+    padding: 40px 0;
+    width: 100%;
+    font-family: Arial, sans-serif;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.footer-section {
+    flex: 1;
+    padding: 20px;
+    min-width: 250px;
+    margin: 10px;
+}
+
+.footer-section h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: #1abc9c;
+}
+
+.footer-section p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #ccc;
+}
+
+.footer-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.footer-section ul li a:hover {
+    color: #1abc9c;
+}
+
+.social-icons {
+    margin-top: 20px;
+}
+
+.social-icons a {
+    color: #ccc;
+    margin: 0 15px;
+    font-size: 24px;
+    text-decoration: none;
+}
+
+.social-icons a:hover {
+    color: #1abc9c;
+}
+
+.subscription-form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.subscription-form input {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    margin-bottom: 10px;
+    background-color: #333;
+    color: #fff;
+}
+
+.subscription-form button {
+    padding: 10px;
+    background-color: #1abc9c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.subscription-form button:hover {
+    background-color: #16a085;
+}
+
+.footer-bottom {
+    background-color: #222;
+    text-align: center;
+    padding: 10px;
+    color: #ccc;
+    font-size: 14px;
+}
+
+        /* Video Section Styles */
+        .video-grid {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        .video-card {
+            width: 30%;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+        .video-card iframe {
+            width: 100%;
+            height: 200px;
+            transition: transform 0.3s ease;
+        }
+        .video-card:hover iframe {
+            transform: scale(1.1);
+        }
+        .video-title {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            background-color: rgba(0, 0, 0, 0.6);
+            color: #fff;
+            padding: 5px 10px;
+            font-size: 1rem;
+        }
+
+        /* Modal Styles */
+        .modal-content {
+            background-color: #343a40;
+            color: #fff;
+        }
+        .modal-header {
+            border-bottom: 1px solid #f39c12;
+        }
+        .modal-title {
+            font-size: 1.5rem;
+        }
+        .btn-close {
+            color: #fff;
+        }
+        .video-card iframe {
+            width: 100%;
+            height: 200px;
+            border: none;
+            border-radius: 15px;
+        }
+        .video-title {
+            font-weight: 700;
+            color: #2c3e50;
+            margin-top: 15px;
+        }
+        pre {
+            white-space: pre-wrap;  
+            word-wrap: break-word;  
+            line-height: 1.5;  
+            padding: 15px;  
+            background-color: #f4f4f4;  
+            border-radius: 10px;  
+            margin-top: 20px;  
+        }
+         }
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px 0;
+        }
+        .video-card {
+            border: none;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            background-color: #ffffff;
+            text-align: center;
+            padding: 20px;
+            cursor: pointer;
+        }
+        
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <a href="index.html" class="navbar-brand">CPR Training</a>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="about.html" class="nav-link">About Us</a></li>
+                    <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
+                    <li class="nav-item"><a href="team.html" class="nav-link">Our Team</a></li>
+                    <li class="nav-item"><a href="pricing.html" class="nav-link">Emergency Response</a></li>
+                    <li class="nav-item"><a href="videos.html" class="nav-link">Videos</a></li>
+                    <li class="nav-item"><a href="signup.html" class="nav-link">Sign Up</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <section class="container mt-5">
+        <h1 class="text-center fw-bold">Lessons</h1>
+        <p class="text-center lead">Learn essential first aid skills through our curated video lessons.</p>
+        <div class="video-grid">
+            <div class="video-card" 
+                 data-bs-toggle="modal" 
+                 data-bs-target="#videoModal" 
+                 data-video="https://www.youtube.com/embed/n2betjM-BeE" 
+                 data-title="Lesson 1: Basic First Aid" 
+                 data-description="<pre>When someone has <b>drowned</b> or is <b>choking on water</b>, 
+<b>tapping on their back</b> is not an effective or safe method to help them.
+Instead, the focus should be on <b>clearing their airway</b> and ensuring they can <b>breathe</b>....
+</pre>">
+                <iframe src="https://www.youtube.com/embed/n2betjM-BeE" allowfullscreen></iframe>
+                <h5 class="video-title">Lesson 1: Basic First Aid</h5>
+            </div>
+
+            <div class="video-card" 
+                 data-bs-toggle="modal" 
+                 data-bs-target="#videoModal" 
+                 data-video="https://www.youtube.com/embed/lJwlTdcnAaE" 
+                 data-title="Lesson 2: Understanding Cramps" 
+                 data-description="<pre>When someone experiences a <b>cramp</b> in their legs, it is often caused by an involuntary contraction...</pre>">
+                <iframe src="https://www.youtube.com/embed/lJwlTdcnAaE" allowfullscreen></iframe>
+                <h5 class="video-title">Lesson 2: Understanding Cramps</h5>
+            </div>
+
+            <div class="video-card" 
+                 data-bs-toggle="modal" 
+                 data-bs-target="#videoModal" 
+                 data-video="https://www.youtube.com/embed/BK9YXHFhCV4" 
+                 data-title="Lesson 3: Helping a Friend with Breathing Problems" 
+                 data-description="<pre>If a friend is experiencing <b>breathing problems</b>, stay <b>calm</b> and act <b>quickly</b>...</pre>">
+                <iframe src="https://www.youtube.com/embed/BK9YXHFhCV4" allowfullscreen></iframe>
+                <h5 class="video-title">Lesson 3: Helping a Friend with Breathing Problems</h5>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal -->
+    <div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="videoModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="videoModalLabel">Video Title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <iframe id="modal-video" width="100%" height="400px" allowfullscreen></iframe>
+                    <p id="modal-description" class="mt-4"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h2>About CPR Training</h2>
+                <p>At CPR Training, we are committed to providing world-class lifesaving skills. Join us in creating safer communities with top-notch training programs.</p>
+            </div>
+            <div class="footer-section">
+                <h2>Quick Links</h2>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="team.html">Our Team</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="videos.html">Videos</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h2>Follow Us</h2>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 CPR Training. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+         const videoCards = document.querySelectorAll('.video-card');
+            const modal = document.getElementById('videoModal');
+            const modalVideo = document.getElementById('modal-video');
+            const modalTitle = document.getElementById('videoModalLabel');
+            const modalDescription = document.getElementById('modal-description');
+
+            videoCards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const videoUrl = card.getAttribute('data-video');
+                    const title = card.getAttribute('data-title');
+                    const description = card.getAttribute('data-description');
+
+                    modalVideo.src = videoUrl;
+                    modalTitle.innerText = title;
+                    modalDescription.innerHTML = description;
+                });
+            });
+
+            modal.addEventListener('hidden.bs.modal', () => {
+                modalVideo.src = '';
+            });
+    </script>
+</body>
+</html>

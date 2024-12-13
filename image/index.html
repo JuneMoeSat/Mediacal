@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/color.css">
+    <link rel="icon" type="image/x-icon" href="Medical red.png">
+    <style type="text/css">@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+body{
+    font-family: Poppins;
+    margin: 0;
+    background-color: #010101;
+    color: #eee;
+}
+svg{
+    width: 25px;
+}
+header{
+    width: 1200px;
+    max-width: 90%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 50px 1fr 50px;
+    grid-template-rows: 50px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 100;
+}
+header .logo{
+    font-weight: bold;
+}
+header .menu{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    font-weight: 500;
+}
+/* css slider */
+.slider{
+    height: 100vh;
+    margin-top: -50px;
+    position: relative;
+}
+.slider .list .item{
+    position: absolute;
+    inset: 0 0 0 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: .5s;
+}
+.slider .list .item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.slider .list .item::after{
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-image: linear-gradient(
+        to top, #000 40%, transparent
+    );
+}
+.slider .list .item .content{
+    position: absolute;
+    left: 10%;
+    top: 20%;
+    width: 500px;
+    max-width: 80%;
+    z-index: 1;
+}
+.slider .list .item .content p:nth-child(1){
+    text-transform: uppercase;
+    letter-spacing: 10px;
+}
+.slider .list .item .content h2{
+    font-size: 100px;
+    margin: 0;
+}
+.slider .list .item.active{
+    opacity: 1;
+    z-index: 10;
+}
+@keyframes showContent {
+    to{
+        transform: translateY(0);
+        filter: blur(0);
+        opacity: 1;
+    }
+}
+.slider .list .item.active p:nth-child(1),
+.slider .list .item.active h2,
+.slider .list .item.active p:nth-child(3){
+    transform: translateY(30px);
+    filter: blur(20px);
+    opacity: 0;
+    animation: showContent .5s .7s ease-in-out 1 forwards;
+}
+.slider .list .item.active h2{
+    animation-delay: 1s;
+}
+.slider .list .item.active p:nth-child(3){
+    animation-duration: 1.3s;
+}
+.arrows{
+    position: absolute;
+    top: 30%;
+    right: 50px;
+    z-index: 100;
+}
+.arrows button{
+    background-color: #eee5;
+    border: none;
+    font-family: monospace;
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    font-size: x-large;
+    color: #eee;
+    transition: .5s;
+}
+.arrows button:hover{
+    background-color: #eee;
+    color: black;
+}
+.thumbnail{
+    position: absolute;
+    bottom: 50px;
+    z-index: 11;
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    height: 250px;
+    padding: 0 50px;
+    box-sizing: border-box;
+    overflow: auto;
+    justify-content: center;
+}
+.thumbnail::-webkit-scrollbar{
+    width: 0;
+}
+.thumbnail .item{
+    width: 150px;
+    height: 220px;
+    filter: brightness(.5);
+    transition: .5s;
+    flex-shrink: 0;
+}
+.thumbnail .item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+.thumbnail .item.active{
+    filter: brightness(1.5);
+}
+.thumbnail .item .content{
+    position: absolute;
+    inset: auto 10px 10px 10px;
+}
+@media screen and (max-width: 678px) {
+    .thumbnail{
+        justify-content: start;
+    }
+    .slider .list .item .content h2{
+        font-size: 60px;
+    }
+    .arrows{
+        top: 10%;
+    }
+}
+/* Transparent Navbar */
+.header {
+    position: relative;
+    padding: 20px;
+    background: transparent; /* Transparent background for the header */
+    box-shadow: none; /* Remove shadow if you want a clean look */
+}
+
+.navbar {
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+    font-size: 1rem;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: white; /* Adjust color if the background is light */
+    padding: 10px 15px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+    color: #FFD700; /* Add hover effect if needed */
+}
+
+.logo {
+    font-size: 1.8rem;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    margin-right: auto;
+}
+
+.btn {
+    padding: 10px 20px;
+    background-color: #FFD700;
+    color: black;
+    border-radius: 5px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.btn:hover {
+    background-color: #ffbf00;
+}
+
+</style>
+</head>
+<body>
+        <!-- header -->
+    <header class="header">
+        <a href="index.html" class="logo"><i class="fas fa-heartbeat"></i> CPR Training</a>
+        <nav class="navbar">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="services.html">Services</a>
+            <a href="team.html">Our Team</a>
+            <a href="pricing.html">Emergency Response</a>
+            <a href="videos.html">Videos</a>
+        </nav>
+        <a href="signup.html" class="btn">Sign Up</a>
+    </header>
+
+    <!-- slider -->
+
+    <div class="slider">
+        <!-- list Items -->
+        <div class="list">
+            <div class="item active">
+                <img src="images/CPR.jpg">
+                <div class="content">
+                    <p><<<.>>></p>
+                    <h2>CPR</h2>
+                    <p>
+                        You are going to be provided with free CPR lessons..
+                        Without spending a single penny..
+                    </p>
+                </div>
+            </div>
+            <div class="item">
+                <img src="images/Slider1.jpg">
+                <div class="content">
+                    <p><<<.>>></p>
+                    <h2>About us</h2>
+                    <p>
+                        We will get to know each other as you progress your life long goals
+                        You will be met with realistic trainings they do at real courses...
+                    </p>
+                </div>
+            </div>
+            <div class="item">
+                <img src="images/Slider2.jpg">
+                <div class="content">
+                    <p><<<.>>></p>
+                    <h2>Think outside the box!</h2>
+                    <p>
+                        Why pay for a course when you can learn your essential life skills
+                        For absolutely free! Its more effective and convenient this way..
+                    </p>
+                </div>
+            </div>
+            <div class="item">
+                <img src="images/Slider3.webp">
+                <div class="content">
+                    <p><<<.>>></p>
+                    <h2>Demonstrations!!</h2>
+                    <p>
+                        This website will provide you with high quality videos for 
+                        real life situations you may come across..
+                    </p>
+                </div>
+            </div>
+            <div class="item">
+                <img src="imagse/Slider4.jpeg">
+                <div class="content">
+                    <p><<<.>>></p>
+                    <h2>Responses</h2>
+                    <p>
+                        We also have emergency response systems either helping you
+                        how to call for emergency or providing you with assistances..
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!-- button arrows -->
+        <div class="arrows">
+            <button id="prev"><</button>
+            <button id="next">></button>
+        </div>
+        <!-- thumbnail -->
+        <div class="thumbnail">
+            <div class="item active">
+                <img src="images/CPR.jpg">
+                <div class="content">
+                    CPR
+                </div>
+            </div>
+            <div class="item">
+                <img src="images/Slider1.jpg">
+                <div class="content">
+                    About Us
+                </div>
+            </div>
+            <div class="item">
+                <img src="images/Slider2.jpg">
+                <div class="content">
+                    Think
+                </div>
+            </div>
+            <div class="item">
+                <img src="images/Slider3.webp">
+                <div class="content">
+                    Demonstrate
+                </div>
+            </div>
+            <div class="item">
+                <img src="images/Slider4.jpeg">
+                <div class="content">
+                    Responses
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script type="text/javascript">let items = document.querySelectorAll('.slider .list .item');
+let next = document.getElementById('next');
+let prev = document.getElementById('prev');
+let thumbnails = document.querySelectorAll('.thumbnail .item');
+
+// config param
+let countItem = items.length;
+let itemActive = 0;
+// event next click
+next.onclick = function(){
+    itemActive = itemActive + 1;
+    if(itemActive >= countItem){
+        itemActive = 0;
+    }
+    showSlider();
+}
+//event prev click
+prev.onclick = function(){
+    itemActive = itemActive - 1;
+    if(itemActive < 0){
+        itemActive = countItem - 1;
+    }
+    showSlider();
+}
+// auto run slider
+let refreshInterval = setInterval(() => {
+    next.click();
+}, 5000)
+function showSlider(){
+    // remove item active old
+    let itemActiveOld = document.querySelector('.slider .list .item.active');
+    let thumbnailActiveOld = document.querySelector('.thumbnail .item.active');
+    itemActiveOld.classList.remove('active');
+    thumbnailActiveOld.classList.remove('active');
+
+    // active new item
+    items[itemActive].classList.add('active');
+    thumbnails[itemActive].classList.add('active');
+    setPositionThumbnail();
+
+    // clear auto time run slider
+    clearInterval(refreshInterval);
+    refreshInterval = setInterval(() => {
+        next.click();
+    }, 5000)
+}
+function setPositionThumbnail () {
+    let thumbnailActive = document.querySelector('.thumbnail .item.active');
+    let rect = thumbnailActive.getBoundingClientRect();
+    if (rect.left < 0 || rect.right > window.innerWidth) {
+        thumbnailActive.scrollIntoView({ behavior: 'smooth', inline: 'nearest' });
+    }
+}
+
+// click thumbnail
+thumbnails.forEach((thumbnail, index) => {
+    thumbnail.addEventListener('click', () => {
+        itemActive = index;
+        showSlider();
+    })
+})</script>
+    <script src="app.js"></script>
+</body>
+</html>
